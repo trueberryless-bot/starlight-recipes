@@ -67,6 +67,18 @@ describe("getImagesVirtualModule", () => {
     expect(module).toContain('"John \\"JD\\" Doe": authorImage0');
     expect(module).toContain('"Cool": authorImage1');
   });
+  test("resolves relative image paths in project directories with special characters", () => {
+    const module = getImagesVirtualModule(
+      validateConfig({
+        authors: { alice: { name: "Alice", picture: "./alice.jpg" } },
+      }),
+      { root: new URL("file:///my%20recipes/") }
+    );
+
+    expect(module).toContain(
+      'import authorImage0 from "/my recipes/alice.jpg";'
+    );
+  });
 });
 
 describe("getContext", () => {
