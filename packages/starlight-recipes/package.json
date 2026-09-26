@@ -29,8 +29,7 @@
     "astro-embed": "^0.14.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
-    "schema-dts": "^2.0.0",
-    "tinyduration": "^3.4.1"
+    "schema-dts": "^2.0.0"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.42.4",
